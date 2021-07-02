@@ -13,7 +13,8 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="80dp"
+            android:id="@+id/profile_pic"
+            android:layout_width="75dp"
             android:layout_height="120dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_baseline_account_circle"/>
@@ -23,6 +24,7 @@
             android:textSize="25sp"
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/allerta"
             android:textColor="@color/white"
             android:paddingLeft="25dp"
             android:paddingRight="35dp"
@@ -35,6 +37,8 @@
         android:layout_height="wrap_content"
         android:text="@string/profile"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/allerta"
+
         android:layout_marginLeft="15dp"
         android:textSize="20dp"/>
 
@@ -53,6 +57,8 @@
         <TextView
             android:id="@+id/name_profile"
             android:layout_width="match_parent"
+            android:fontFamily="@font/allerta"
+            android:textColor="@color/background"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -74,13 +80,16 @@
             android:id="@+id/email_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/allerta"
             android:textSize="18sp"
+            android:textColor="@color/background"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="@string/email"/>
     </LinearLayout>
 
     <TextView
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/fields"/>
@@ -91,7 +100,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:layout_marginTop="40dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -102,8 +112,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/HOME"
-
+            android:fontFamily="@font/allerta"
             android:layout_marginLeft="15dp"
+            android:textColor="@color/background"
             android:textSize="18dp"
             />
 
@@ -115,6 +126,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:layout_marginTop="10dp"
+        android:background="?android:attr/selectableItemBackground"
         android:orientation="horizontal">
 
         <ImageView
@@ -123,9 +135,10 @@
             android:src="@drawable/ic_baseline_power_settings_new_24"/>
     <TextView
         android:layout_width="match_parent"
+        android:textColor="@color/background"
         android:layout_height="wrap_content"
         android:text="@string/logout"
-
+        android:fontFamily="@font/allerta"
         android:layout_marginLeft="15dp"
         android:textSize="18dp"
         />

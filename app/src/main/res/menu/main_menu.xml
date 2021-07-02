@@ -15,7 +15,7 @@
         android:title="@string/profile"
         android:icon="@drawable/ic_baseline_account_circle"
         app:showAsAction="always|collapseActionView"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
+
         />
     </group>
 </menu>

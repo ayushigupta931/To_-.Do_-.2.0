@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+    android:background="@color/login"
+    android:layout_height="match_parent" >
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/login"
     android:padding="16dp"
     tools:context=".Register">
 
@@ -12,6 +16,7 @@
         android:id="@+id/backToLoginPg"
         android:layout_width="35dp"
         android:layout_height="35dp"
+        android:background="?android:attr/selectableItemBackground"
         android:src="@drawable/ic_baseline_arrow_back_24"/>
 
 
@@ -21,7 +26,7 @@
     android:layout_marginTop="40dp"
     android:layout_below="@id/backToLoginPg"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     >
 
 
@@ -122,3 +127,4 @@
         />
 
 </RelativeLayout>
+</ScrollView>

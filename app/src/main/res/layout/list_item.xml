@@ -7,9 +7,9 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="15dp"
     android:layout_marginVertical="8dp"
-    android:background="@color/listItem"
-    app:cardCornerRadius="14dp"
-    app:cardElevation="8dp">
+    android:background="@color/fields"
+    app:cardCornerRadius="17dp"
+    app:cardElevation="4dp">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -36,8 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@id/selected"
-            android:textColor="@color/white"
+            android:textColor="@color/background"
             android:paddingTop="10dp"
+            android:fontFamily="@font/allerta"
             android:paddingBottom="10dp"
             android:paddingLeft="10dp"
             android:textSize="18sp"

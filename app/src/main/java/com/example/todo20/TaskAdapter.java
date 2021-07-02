@@ -106,12 +106,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
         if (holder.selected.getVisibility() == View.GONE) {
             holder.selected.setVisibility(View.VISIBLE);
-            holder.cardView.setCardBackgroundColor(Color.WHITE);
+            holder.cardView.setCardBackgroundColor(mContext.getResources().getColor(R.color.background));
             holder.cardView.setContentPadding(5, 5, 5, 5);
 
         } else {
             holder.selected.setVisibility(View.GONE);
             holder.cardView.setContentPadding(0, 0, 0, 0);
+            holder.cardView.setCardBackgroundColor(mContext.getResources().getColor(R.color.fields));
             Mode.finish();
 
 
@@ -216,7 +217,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                                     isEnable = false;
                                     selectedTask = null;
                                     holder.selected.setVisibility(View.GONE);
-                                    holder.cardView.setCardBackgroundColor(Color.WHITE);
+                                    holder.cardView.setCardBackgroundColor(mContext.getResources().getColor(R.color.fields));
                                     holder.cardView.setContentPadding(0, 0, 0, 0);
                                     notifyDataSetChanged();
                                 }
@@ -305,7 +306,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                                     isEnable = false;
                                     selectedTask = null;
                                     holder.selected.setVisibility(View.GONE);
-                                    holder.cardView.setCardBackgroundColor(Color.WHITE);
+                                    holder.cardView.setCardBackgroundColor(mContext.getResources().getColor(R.color.fields));
                                     holder.cardView.setContentPadding(0, 0, 0, 0);
                                     notifyDataSetChanged();
                                 }
@@ -397,7 +398,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                                     isEnable = false;
                                     selectedTask = null;
                                     holder.selected.setVisibility(View.GONE);
-                                    holder.cardView.setCardBackgroundColor(Color.WHITE);
+                                    holder.cardView.setCardBackgroundColor(mContext.getResources().getColor(R.color.fields));
                                     holder.cardView.setContentPadding(0, 0, 0, 0);
                                     notifyDataSetChanged();
                                 }

@@ -2,7 +2,7 @@
     <string name="app_name">To Do 2.0</string>
     <string name="userName">Username</string>
     <string name="password">Password</string>
-    <string name="login">Sign In</string>
+    <string name="login">Log In</string>
     <string name="email">Email</string>
     <string name="submit">Sign up</string>
     <string name="add">addNewTask</string>
@@ -23,4 +23,5 @@
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="HOME">Home</string>
+    <string name="keepMeLoggedIn">Keep me logged in</string>
 </resources>

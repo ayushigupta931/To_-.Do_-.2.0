@@ -8,6 +8,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,8 +23,10 @@ public class Login extends AppCompatActivity {
 
     private TextView registerHere;
     private TextInputEditText username, password;
+    private CheckBox keepMeLoggedIn;
     private Button signIn;
     public static String tokenn;
+
 
 
     @Override
@@ -33,6 +37,9 @@ public class Login extends AppCompatActivity {
         username = (TextInputEditText) findViewById(R.id.loginUsername);
         password = (TextInputEditText) findViewById(R.id.loginPassword);
         signIn = (Button) findViewById(R.id.signIn);
+
+
+
 
         registerHere = (TextView) findViewById(R.id.registerHere);
         registerHere.setOnClickListener(new View.OnClickListener() {

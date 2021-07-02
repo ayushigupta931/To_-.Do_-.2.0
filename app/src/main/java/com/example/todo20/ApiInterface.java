@@ -1,5 +1,6 @@
 package com.example.todo20;
 
+import java.io.InputStream;
 import java.util.List;
 
 import okhttp3.ResponseBody;
@@ -38,4 +39,6 @@ public interface ApiInterface {
 
     @GET("auth/profile/")
     Call<UserProfile> getUserProfile(@Header("Authorization") String token);
+
+
 }

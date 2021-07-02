@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/background</item>
         <item name="colorPrimaryVariant">@color/fields</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="titleTextColor"></item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

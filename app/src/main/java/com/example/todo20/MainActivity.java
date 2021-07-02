@@ -14,26 +14,33 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.example.todo20.db.AppDatabase;
+import com.example.todo20.db.TokenDb;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import org.jetbrains.annotations.NotNull;
 import org.w3c.dom.Text;
 
+import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -47,12 +54,14 @@ public class MainActivity extends AppCompatActivity implements BottomSheet.Botto
     private List<TasksResponse> tasklist;
     private BottomSheet bottomSheet;
     private DrawerLayout drawerLayout;
-
+    private AppDatabase db;
     private LinearLayout home;
     private LinearLayout logout;
     private TextView username;
     private TextView name;
     private TextView email;
+    private TokenDb tokenToBeInserted;
+
 
 
 
@@ -60,6 +69,20 @@ public class MainActivity extends AppCompatActivity implements BottomSheet.Botto
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        db = AppDatabase.getDatabase(this.getApplicationContext());
+
+
+            tokenToBeInserted = new TokenDb();
+            tokenToBeInserted.token = Login.tokenn;
+            db.tokenDao().insertToken(tokenToBeInserted);
+
+
+
+        if(Login.tokenn == null){
+            List<TokenDb> tokenInDb = db.tokenDao().getAllTokens();
+            Login.tokenn = (tokenInDb.get(0)).token;
+        }
 
 
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -96,7 +119,6 @@ public class MainActivity extends AppCompatActivity implements BottomSheet.Botto
         name = (TextView) findViewById(R.id.name_profile);
         email = (TextView) findViewById(R.id.email_profile);
 
-
         ApiInterface apiInterface = ApiClient.getRetrofit().create(ApiInterface.class);
         Call<UserProfile> call = apiInterface.getUserProfile(Login.tokenn);
         call.enqueue(new Callback<UserProfile>() {
@@ -108,6 +130,8 @@ public class MainActivity extends AppCompatActivity implements BottomSheet.Botto
                     username.setText(userProfile.getUsername());
                     name.setText(userProfile.getName());
                     email.setText(userProfile.getEmail());
+
+
                 }
                 else{
                     Toast.makeText( MainActivity.this,"Failed to load profile!",Toast.LENGTH_SHORT).show();
@@ -153,6 +177,8 @@ public class MainActivity extends AppCompatActivity implements BottomSheet.Botto
     }
 
 
+
+
     public boolean isDrawerOpen(){
         if(drawerLayout.isDrawerOpen(GravityCompat.START))
             return true;
@@ -172,6 +198,14 @@ public class MainActivity extends AppCompatActivity implements BottomSheet.Botto
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
+                List<TokenDb> tokenInDb = db.tokenDao().getAllTokens();
+
+                for(TokenDb t : tokenInDb) {
+                    db.tokenDao().deleteToken(t);
+                }
+
+                tokenInDb.clear();
 
                 activity.finishAffinity();
 
@@ -235,12 +269,12 @@ public class MainActivity extends AppCompatActivity implements BottomSheet.Botto
     }
 
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        closeDrawer();
-    }
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//
+//        closeDrawer();
+//    }
 
     public void closeDrawer(){
 
@@ -253,8 +287,9 @@ public class MainActivity extends AppCompatActivity implements BottomSheet.Botto
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
 
+        Menu optionsMenu = menu;
 
-        MenuItem item2 = menu.findItem(R.id.profile);
+        MenuItem item2 = optionsMenu.findItem(R.id.profile);
         item2.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -265,7 +300,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheet.Botto
         });
 
 
-        MenuItem item1 = menu.findItem(R.id.search);
+        MenuItem item1 = optionsMenu.findItem(R.id.search);
         item1.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {

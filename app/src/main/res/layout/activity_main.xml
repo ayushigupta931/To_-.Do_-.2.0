@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/login"
     android:id="@+id/drawerLayout"
     tools:context=".MainActivity">
 
@@ -35,9 +35,9 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
         android:contentDescription="@string/add"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/background"
         android:src="@drawable/ic_baseline_add"
-        app:tint = "@color/listItem"
+        app:tint = "@color/login"
         app:maxImageSize="40dp"
         tools:ignore="RtlHardcoded,UnusedAttribute" />
 
