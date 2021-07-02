@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="10dp"
+    tools:context=".AddNewTask">
+
+    <TextView
+        android:id="@+id/whatIsToBeDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/whatIsToBeDone"
+        android:textColor="@color/login"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/newTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whatIsToBeDone"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@color/login"
+        android:hint="@string/addYourTask"
+        android:inputType="textMultiLine"
+        android:textColor="@color/white"
+        android:textColorHint="#90A4AE"
+        android:textSize="20sp"
+        tools:ignore="Autofill,UnusedAttribute" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/saveTask"
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:layout_below="@id/newTask"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/background"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@color/login"
+        android:text="@string/Save"/>
+
+</RelativeLayout>

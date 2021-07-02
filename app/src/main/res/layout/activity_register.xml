@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login"
+    android:padding="16dp"
+    tools:context=".Register">
+
+    <ImageView
+        android:id="@+id/backToLoginPg"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"/>
+
+
+<LinearLayout
+    android:id="@+id/registrationPg"
+    android:orientation="vertical"
+    android:layout_marginTop="40dp"
+    android:layout_below="@id/backToLoginPg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:startIconTint="@color/background"
+        android:layout_width="match_parent"
+        android:hint="@string/Name"
+        app:startIconDrawable="@drawable/ic_baseline_person_24"
+        android:layout_height="wrap_content">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/fields"
+
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:hint="@string/userName"
+        app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
+        app:startIconTint="@color/background"
+        android:layout_height="wrap_content">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registerUsername"
+
+        android:layout_width="match_parent"
+        android:background="@color/fields"
+        android:layout_height="wrap_content"
+
+
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:hint="@string/email"
+        app:startIconTint="@color/background"
+        app:startIconDrawable="@drawable/ic_baseline_email_24"
+        android:layout_height="wrap_content">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+
+
+        android:layout_height="wrap_content"
+        android:background="@color/fields"
+
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:hint="@string/password"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24"
+        app:startIconTint="@color/background"
+        android:layout_height="wrap_content">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registerPassword"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:background="@color/fields"
+
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+</LinearLayout>
+    <Button
+        android:id="@+id/register"
+        android:textSize="15sp"
+        android:padding="5dp"
+        android:textColor="@color/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/registrationPg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/submit"
+        />
+
+</RelativeLayout>

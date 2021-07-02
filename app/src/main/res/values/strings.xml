@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">To Do 2.0</string>
+    <string name="userName">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Sign In</string>
+    <string name="email">Email</string>
+    <string name="submit">Sign up</string>
+    <string name="add">addNewTask</string>
+    <string name="Name">Name</string>
+    <string name="register">Sign up</string>
+    <string name="NewUser">New user?</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="sampleTask">Sample task</string>
+    <string name="whatIsToBeDone">What is to be done?</string>
+    <string name="addYourTask">Enter task here</string>
+    <string name="Save">Save</string>
+    <string name="img">image</string>
+    <string name="delete">Delete</string>
+    <string name="welcome">Hey there, Welcome back!</string>
+    <string name="signIntoContinue">Sign in to continue</string>
+    <string name="logout">Logout</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="HOME">Home</string>
+</resources>
